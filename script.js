@@ -31,9 +31,9 @@ window.onload = function()
 
     function drawBlock(ctx, position)
     {
-        var x = position[0] + blockSize;
-        var y = position[1] + blockSize;
-        ctx.fillRect(x, y, blockSize, blockSize);
+        var x = position[0] * blockSize;
+        var y = position[1] * blockSize;
+        ctx.fillRect(x ,y, blockSize, blockSize);
     }
 
     function Snake(body)
@@ -42,7 +42,7 @@ window.onload = function()
         this.draw = function()
         {
             ctx.save();
-            ctx.fillstyle = "#ff0000";
+            ctx.fillStyle = "#ff0000";
             for(var i = 0; i < this.body.length; i++)
             {
                 drawBlock(ctx, this.body[i]);
