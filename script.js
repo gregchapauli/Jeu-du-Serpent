@@ -7,6 +7,8 @@ window.onload = function()
     var delay = 100;
     var snakee;
     var applee;
+    var widthInBlocks = canvasWidth/blockSize;
+    var heightInBlocks = canvasHeight/blockSize;
 
     init();
 
@@ -98,6 +100,27 @@ window.onload = function()
                 this.direction = newDirection;
             }
         };
+        this.checkCollision = function()
+        {
+            var wallCollision = false;
+            var snakeCollision = false;
+            var head = this.body[0];
+            var rest = this.body.slice(1);
+            var snakeX = head[0];
+            var snakeY = head[1];
+            var minX = 0;
+            var minY = 0;
+            var maxX = widthInBlocks - 1;
+            var maxY = heightInBlocks - 1;
+            var isNotBetweenHorizontalWalls = snakeX < minX || snakeX > maxX;
+            var isNotBetweenVertivalWalls = snakeY < minY || snakeY > maxY;
+
+            if(isNotBetweenHorizontalWalls || isNotBetweenVertivalWalls)
+            {
+                wallCollision = true;
+            }
+        };
+        
 
     }
 
