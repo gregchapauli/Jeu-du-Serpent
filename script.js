@@ -1,9 +1,9 @@
 window.onload = function(){   
     var canvasWidth = 900;
     var canvasHeight = 600;
-    var blockSize = 30;
+    var blockSize = 20;
     var ctx;
-    var delay = 100;
+    var delay = 80;
     var snakee;
     var applee;
     var widthInBlocks = canvasWidth/blockSize;
@@ -17,10 +17,10 @@ window.onload = function(){
         var canvas = document.createElement('canvas');
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
-        canvas.style.border = "30px solid gray";
+        canvas.style.border = "10px solid #1fcbc5";
         canvas.style.margin = "50px auto";
         canvas.style.display = "block";
-        canvas.style.backgroundColor = "#ddd";
+        canvas.style.backgroundColor = "#bac5c5";
         document.body.appendChild(canvas);
         ctx = canvas.getContext('2d');
         snakee = new Snake ([[6,4], [5,4], [4,4], [3,4],[2,4]], "right");
@@ -78,8 +78,8 @@ window.onload = function(){
 
     function drawScore(){
         ctx.save();
-        ctx.font = "bold 200px sans-serif";
-        ctx.fillStyle = "gray";
+        ctx.font = "bold 150px sans-serif";
+        ctx.fillStyle = "#85a4d5";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         var centreX = canvasWidth / 2;
